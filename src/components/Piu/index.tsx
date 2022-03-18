@@ -3,16 +3,23 @@ import * as S from "./styles";
 import AvatarImg from "../../images/avatar.jpg";
 import LikeImg from "../../images/heart.svg";
 
-const Piu: React.FC = () => {
+interface PiuProps {
+  img: string;
+  txt: string;
+  name: string;
+  user: string;
+}
+
+const Piu: React.FC<PiuProps> = ({ img, txt, name, user }) => {
   return (
     <>
       <S.PiuBody>
-        <S.PiuImg src={AvatarImg}></S.PiuImg>
+        <S.PiuImg src={img}></S.PiuImg>
         <S.PiuInfo>
           <S.PiuName>
-            Henrique <S.PiuUser>@patuska</S.PiuUser>
+            {name} <S.PiuUser>@{user}</S.PiuUser>
           </S.PiuName>
-          <S.PiuText>oieeeee</S.PiuText>
+          <S.PiuText>{txt}</S.PiuText>
           <S.PiuActionsMenu>
             <S.PiuAction>
               <S.PiuActionImg />
