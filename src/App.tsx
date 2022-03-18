@@ -17,35 +17,45 @@ import ProfileIcon from "./images/profile.svg";
 import api from "./config/api";
 
 function App() {
-  const [PiuList, setPiuList] = useState([
-    {
-      created_at: "",
-      id: "",
-      likes: [],
-      text: "",
-      updated_at: "",
-      user: {
-        about: "",
-        email: "",
-        favorites: [],
-        followers: [],
-        following: [],
-        id: "",
-        first_name: "",
-        last_name: "",
-        photo: "",
-        username: "",
-      },
-    },
-  ]);
+  interface PiuI {
+    created_at: "";
+    id: "";
+    likes: [];
+    text: "";
+    updated_at: "";
+    user: {
+      about: "";
+      email: "";
+      favorites: [];
+      followers: [];
+      following: [];
+      id: "";
+      first_name: "";
+      last_name: "";
+      photo: "";
+      username: "";
+    };
+  }
 
-  // const [PiuList, setPiuList] = useState();
+  const [PiuList, setPiuList] = useState<PiuI[]>([]);
+
+  // useEffect(() => {
+  //   api.get("pius").then((response) => {
+  //     setPiuList(response.data);
+  //   });
+  // }, []);
 
   useEffect(() => {
-    api.get("pius").then((response) => {
-      setPiuList(response.data);
-    });
-  }, []);
+    const getData = async () => {
+      try {
+        const resp = await api.get("pius");
+        setPiuList(resp.data);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    getData();
+  });
 
   return (
     <div className="App">
@@ -74,12 +84,13 @@ function App() {
           <Alert></Alert>
           <WriteArea></WriteArea>
           <ul>
-            <Piu
+            {/* <Piu
               img={Avatar}
               name="Henrique Duras"
               user="patuskera"
-              txt="fodase"
-            ></Piu>
+              txt="oie"
+              likes={3}
+            ></Piu> */}
             {PiuList.map((PiuList) => (
               <Piu
                 key={PiuList.id}
@@ -87,6 +98,7 @@ function App() {
                 name={PiuList.user.first_name}
                 user={PiuList.user.username}
                 img={PiuList.user.photo}
+                likes={PiuList.likes.length}
               ></Piu>
             ))}
           </ul>

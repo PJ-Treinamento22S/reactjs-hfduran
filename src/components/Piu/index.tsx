@@ -8,9 +8,10 @@ interface PiuProps {
   txt: string;
   name: string;
   user: string;
+  likes: number;
 }
 
-const Piu: React.FC<PiuProps> = ({ img, txt, name, user }) => {
+const Piu: React.FC<PiuProps> = ({ img, txt, name, user, likes }) => {
   return (
     <>
       <S.PiuBody>
@@ -25,7 +26,8 @@ const Piu: React.FC<PiuProps> = ({ img, txt, name, user }) => {
               <S.PiuActionImg />
             </S.PiuAction>
             <S.PiuAction>
-              <S.PiuActionImg src={LikeImg} />3
+              <S.PiuActionImg src={LikeImg} />
+              {likes}
             </S.PiuAction>
           </S.PiuActionsMenu>
         </S.PiuInfo>

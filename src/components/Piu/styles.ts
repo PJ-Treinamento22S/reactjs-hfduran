@@ -30,7 +30,7 @@ export const PiuUser = styled.span`
   color: #6d6d6d;
 `;
 
-export const PiuText = styled.p`
+export const PiuText = styled.span`
   overflow-wrap: break-word;
   margin-top: 8px;
   margin-bottom: 24px;
