@@ -14,5 +14,26 @@ export const GlobalStyle = createGlobalStyle`
         font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
         text-rendering: optimizeLegibility !important;
         -webkit-font-smoothing: antialiased !important;
+        min-height: 100vh;
+    }
+
+    .App{
+        min-height: 100vh;
+        width: 100vw;
+    }
+
+    .content {
+        display: flex;
+        max-width: 1264px;
+        margin: 0 auto;
+        padding: 0 32px;
+    }
+
+    input,button{
+    outline: 0;
+    }
+
+    ul{
+        list-style: none;
     }
 `;

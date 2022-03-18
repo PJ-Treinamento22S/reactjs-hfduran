@@ -1,6 +1,7 @@
 import React from "react";
 import * as S from "./styles";
 import AvatarImg from "../../images/avatar.jpg";
+import LikeImg from "../../images/heart.svg";
 
 const Piu: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const Piu: React.FC = () => {
               <S.PiuActionImg />
             </S.PiuAction>
             <S.PiuAction>
-              <S.PiuActionImg />3
+              <S.PiuActionImg src={LikeImg} />3
             </S.PiuAction>
           </S.PiuActionsMenu>
         </S.PiuInfo>
