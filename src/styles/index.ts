@@ -9,5 +9,10 @@ export const GlobalStyle = createGlobalStyle`
 
     body{
         width: 100vw;
+        background: #353535;
+        color: white;
+        font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
+        text-rendering: optimizeLegibility !important;
+        -webkit-font-smoothing: antialiased !important;
     }
 `;
