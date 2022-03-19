@@ -15,28 +15,27 @@ import FavoritesIcon from "./images/favorites.svg";
 import FriendsIcon from "./images/friends.svg";
 import ProfileIcon from "./images/profile.svg";
 import api from "./config/api";
+export interface PiuI {
+  created_at: "";
+  id: "";
+  likes: [];
+  text: "";
+  updated_at: "";
+  user: {
+    about: "";
+    email: "";
+    favorites: [];
+    followers: [];
+    following: [];
+    id: "";
+    first_name: "";
+    last_name: "";
+    photo: "";
+    username: "";
+  };
+}
 
 function App() {
-  interface PiuI {
-    created_at: "";
-    id: "";
-    likes: [];
-    text: "";
-    updated_at: "";
-    user: {
-      about: "";
-      email: "";
-      favorites: [];
-      followers: [];
-      following: [];
-      id: "";
-      first_name: "";
-      last_name: "";
-      photo: "";
-      username: "";
-    };
-  }
-
   const [PiuList, setPiuList] = useState<PiuI[]>([]);
 
   // useEffect(() => {
@@ -81,8 +80,7 @@ function App() {
           </Menu>
         </SideBar>
         <Feed>
-          <Alert></Alert>
-          <WriteArea></WriteArea>
+          <WriteArea pius={PiuList} setPius={setPiuList}></WriteArea>
           <ul>
             {/* <Piu
               img={Avatar}
@@ -91,7 +89,7 @@ function App() {
               txt="oie"
               likes={3}
             ></Piu> */}
-            {PiuList.map((PiuList) => (
+            {PiuList?.map((PiuList) => (
               <Piu
                 key={PiuList.id}
                 txt={PiuList.text}

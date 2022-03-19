@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
+
+interface InputProps {
+  NChar: number;
+}
 
 export const WABody = styled.div`
   display: flex;
@@ -25,10 +29,10 @@ export const WAImage = styled.img`
   margin-right: 24px;
 `;
 
-export const WAInput = styled.textarea`
+export const WAInput = styled.textarea<InputProps>`
   font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   background-color: #353535;
-  color: white;
+  color: ${(props) => (props.NChar > 140 ? "red" : "white")};
   border: 0;
   font-size: 18px;
   width: 100%;
