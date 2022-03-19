@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 
+interface ActionProps {
+  active: boolean;
+}
+
 export const PiuBody = styled.li`
   display: flex;
   padding: 12px 16px;
@@ -49,10 +53,14 @@ export const PiuAction = styled.a`
   color: white;
 `;
 
-export const PiuActionImg = styled.img`
+export const PiuActionImg = styled.img<ActionProps>`
   height: 20px;
   width: 20px;
   margin-right: 6px;
+  filter: ${(props) =>
+    props.active
+      ? "invert(39%) sepia(100%) saturate(7381%) hue-rotate(356deg) brightness(101%) contrast(115%)"
+      : "none"};
 `;
 
 export const PiuActionTxt = styled.span``;

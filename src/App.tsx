@@ -92,6 +92,7 @@ function App() {
             {PiuList?.map((PiuList) => (
               <Piu
                 key={PiuList.id}
+                id={PiuList.id}
                 txt={PiuList.text}
                 name={PiuList.user.first_name}
                 user={PiuList.user.username}
