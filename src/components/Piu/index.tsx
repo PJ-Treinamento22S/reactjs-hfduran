@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import * as S from "./styles";
 import AvatarImg from "../../images/avatar.jpg";
 import LikeImg from "../../images/heart.svg";
+import GarbageImg from "../../images/garbage.svg";
 import api from "../../config/api";
 
 interface PiuProps {
@@ -26,7 +27,14 @@ const Piu: React.FC<PiuProps> = ({ img, txt, name, user, likes, id }) => {
           <S.PiuText>{txt}</S.PiuText>
           <S.PiuActionsMenu>
             <S.PiuAction>
-              <S.PiuActionImg active={false} />
+              <S.PiuActionImg
+                active={false}
+                src={GarbageImg}
+                onClick={async () => {
+                  if (user === "xX_felipinho_Xx")
+                    await api.delete("/pius", { data: { piu_id: id } });
+                }}
+              />
             </S.PiuAction>
             <S.PiuAction
               onClick={() => {

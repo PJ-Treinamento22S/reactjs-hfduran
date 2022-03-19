@@ -82,13 +82,6 @@ function App() {
         <Feed>
           <WriteArea pius={PiuList} setPius={setPiuList}></WriteArea>
           <ul>
-            {/* <Piu
-              img={Avatar}
-              name="Henrique Duras"
-              user="patuskera"
-              txt="oie"
-              likes={3}
-            ></Piu> */}
             {PiuList?.map((PiuList) => (
               <Piu
                 key={PiuList.id}
