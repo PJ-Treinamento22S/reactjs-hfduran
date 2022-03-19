@@ -19,7 +19,9 @@ const WriteArea: React.FC = () => {
 
   return (
     <>
-      <Alert hidden={hide}>Não pode mensagens com mais de 140 caracteres</Alert>
+      <Alert hidden={hide}>
+        Mensagens com mais de 140 caracteres não são permitidas.
+      </Alert>
       <S.WABody>
         <S.WAInputAndImg>
           <S.WAImage src={ProfilePic}></S.WAImage>
