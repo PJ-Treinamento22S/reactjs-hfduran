@@ -12,9 +12,19 @@ interface PiuProps {
   user: string;
   likes: number;
   id: string;
+  date: string;
 }
 
-const Piu: React.FC<PiuProps> = ({ img, txt, name, user, likes, id }) => {
+function formatDate(date: string) {
+  date = date.slice(0, 10);
+  let date2 = date.split("-");
+  date2 = date2.reverse();
+  date2[2] = date2[2].slice(2, 4);
+  date = date2.join("/");
+  return date;
+}
+
+const Piu: React.FC<PiuProps> = ({ img, txt, name, user, likes, id, date }) => {
   const [liked, setLiked] = useState(false);
   return (
     <>
@@ -47,7 +57,7 @@ const Piu: React.FC<PiuProps> = ({ img, txt, name, user, likes, id }) => {
             </S.PiuAction>
           </S.PiuActionsMenu>
         </S.PiuInfo>
-        <S.PiuDate>14/02/2022</S.PiuDate>
+        <S.PiuDate>{formatDate(date)}</S.PiuDate>
       </S.PiuBody>
     </>
   );

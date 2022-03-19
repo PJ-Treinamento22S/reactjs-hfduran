@@ -91,6 +91,7 @@ function App() {
                 user={PiuList.user.username}
                 img={PiuList.user.photo}
                 likes={PiuList.likes.length}
+                date={PiuList.created_at}
               ></Piu>
             ))}
           </ul>
