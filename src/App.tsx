@@ -3,12 +3,10 @@ import { GlobalStyle } from "./styles";
 import Menu from "./components/Menu";
 import Feed from "./components/Feed";
 import Piu from "./components/Piu";
-import Alert from "./components/Alert";
 import WriteArea from "./components/WriteArea";
 import NavItem from "./components/NavItem";
 import SideBar from "./components/SideBar";
 
-import Avatar from "./images/avatar.jpg";
 import FeedIcon from "./images/feed.svg";
 import ExploreIcon from "./images/explore.svg";
 import FavoritesIcon from "./images/favorites.svg";
@@ -37,12 +35,6 @@ export interface PiuI {
 
 function App() {
   const [PiuList, setPiuList] = useState<PiuI[]>([]);
-
-  // useEffect(() => {
-  //   api.get("pius").then((response) => {
-  //     setPiuList(response.data);
-  //   });
-  // }, []);
 
   useEffect(() => {
     const getData = async () => {
@@ -80,8 +72,9 @@ function App() {
           </Menu>
         </SideBar>
         <Feed>
-          <WriteArea pius={PiuList} setPius={setPiuList}></WriteArea>
+          <WriteArea></WriteArea>
           <ul>
+            {/* por algum motivo, isso buga o css : */}
             {PiuList?.map((PiuList) => (
               <Piu
                 key={PiuList.id}

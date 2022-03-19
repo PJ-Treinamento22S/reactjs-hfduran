@@ -1,6 +1,5 @@
-import React, { useContext, createContext } from "react";
+import React from "react";
 import * as S from "./styles";
-import NavItem from "../NavItem";
 import SearchBar from "../SearchBar";
 import LogoImg from "../../images/logo.svg";
 

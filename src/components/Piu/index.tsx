@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import * as S from "./styles";
-import AvatarImg from "../../images/avatar.jpg";
 import LikeImg from "../../images/heart.svg";
 import GarbageImg from "../../images/garbage.svg";
 import api from "../../config/api";
@@ -17,10 +16,10 @@ interface PiuProps {
 
 function formatDate(date: string) {
   date = date.slice(0, 10);
-  let date2 = date.split("-");
-  date2 = date2.reverse();
-  date2[2] = date2[2].slice(2, 4);
-  date = date2.join("/");
+  let dateVector = date.split("-");
+  dateVector = dateVector.reverse();
+  dateVector[2] = dateVector[2].slice(2, 4);
+  date = dateVector.join("/");
   return date;
 }
 

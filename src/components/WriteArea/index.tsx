@@ -1,19 +1,10 @@
 import React, { useState } from "react";
 import * as S from "./styles";
-import { PiuI } from "../../App";
 import ProfilePic from "../../images/avatar.jpg";
-import { text } from "node:stream/consumers";
 import api from "../../config/api";
 import Alert from "../Alert";
 
-interface WAProps {
-  charCount?: number;
-  textInput?: string;
-  pius?: PiuI[];
-  setPius?: React.Dispatch<React.SetStateAction<PiuI[]>>;
-}
-
-const WriteArea: React.FC<WAProps> = ({ charCount, pius, setPius }) => {
+const WriteArea: React.FC = () => {
   const [counter, setCounter] = useState(0);
   const [text, setText] = useState("");
   const [hide, setHide] = useState(true);
