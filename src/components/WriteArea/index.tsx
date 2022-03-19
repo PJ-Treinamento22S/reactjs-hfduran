@@ -13,6 +13,7 @@ const WriteArea: React.FC = () => {
     if (counter <= 140 && counter != 0) {
       api.post("/pius", { text: text });
       setText("");
+      setCounter(0);
       setHide(true);
     }
   }
