@@ -30,7 +30,7 @@ const WriteArea: React.FC = () => {
             onChange={(e) => {
               setText(e.target.value);
               setCounter(e.target.value.length);
-              setHide(counter < 140);
+              setHide(e.target.value.length <= 140);
             }}
           ></S.WAInput>
         </S.WAInputAndImg>
