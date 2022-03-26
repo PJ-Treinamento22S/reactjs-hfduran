@@ -74,6 +74,16 @@ function App() {
         <Feed>
           <WriteArea></WriteArea>
           <ul>
+            {/* <Piu
+              key="teste"
+              id="teste"
+              name="Henrique"
+              txt="oi"
+              user="petrrusko"
+              img="oi"
+              likes={3}
+              date="14-02-2002"
+            ></Piu> */}
             {/* por algum motivo, isso buga o css : */}
             {PiuList?.map((PiuList) => (
               <Piu

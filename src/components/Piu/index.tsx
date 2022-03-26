@@ -28,7 +28,7 @@ const Piu: React.FC<PiuProps> = ({ img, txt, name, user, likes, id, date }) => {
   return (
     <>
       <S.PiuBody>
-        <S.PiuImg src={img}></S.PiuImg>
+        <S.PiuImg src={img} alt="profile"></S.PiuImg>
         <S.PiuInfo>
           <S.PiuName>
             {name} <S.PiuUser>@{user}</S.PiuUser>

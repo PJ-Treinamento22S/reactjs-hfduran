@@ -18,6 +18,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .App{
+        display: flex;
+        justify-content: center;
         min-height: 100vh;
         width: 100vw;
     }
@@ -25,8 +27,9 @@ export const GlobalStyle = createGlobalStyle`
     .content {
         display: flex;
         max-width: 1264px;
-        margin: 0 auto;
+        /* margin: 0 auto; */
         padding: 0 32px;
+        justify-content: center;
     }
 
     input,button{

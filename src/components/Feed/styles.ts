@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export const FeedBody = styled.div`
-  margin-left: 245px;
+  /* margin-left: 245px; */
   width: 100%;
   padding: 16px;
 `;
